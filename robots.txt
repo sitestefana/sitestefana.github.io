@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /login/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /personal/
+Disallow: /search/
+Disallow: /api/
+Disallow: /*?utm_
+Disallow: /*&utm_
+
+User-agent: Yandex
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&from&gclid&yclid
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+Sitemap: https://sitestefana.github.io/sitemap.xml
