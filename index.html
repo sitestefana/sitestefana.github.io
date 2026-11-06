@@ -61,7 +61,7 @@
   "url": "https://sitestefana.github.io/",
   "logo": "https://sitestefana.github.io/logo.png",
   "description": "Курсы для заработка и программы с получением образования: бизнес, финансы, онлайн-профессии.",
-  "email": "sitebkbgithub63633@mail.ru",
+  "email": "sitebkbgithub63633@gmail.com",
   "telephone": "+7-995-928-06-20",
   "address": {
     "@type": "PostalAddress",
@@ -143,204 +143,291 @@
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a2e; line-height: 1.6; }
+body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a2e; line-height: 1.6; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 
-/* TOP PROMO BAR */
+/* ================= TOP PROMO BAR ================= */
 .promo-bar {
-  background: linear-gradient(90deg, #ef4444, #f59e0b, #ef4444);
-  background-size: 200% auto;
-  animation: shine 3s linear infinite;
-  color: #fff; text-align: center; padding: 10px;
-  font-weight: 700; font-size: 15px; letter-spacing: .5px;
+  background: linear-gradient(90deg, #ef4444, #f59e0b, #ef4444, #f59e0b, #ef4444);
+  background-size: 300% auto;
+  animation: shine 4s linear infinite;
+  color: #fff; text-align: center; padding: 12px 10px;
+  font-weight: 800; font-size: 16px; letter-spacing: .5px;
+  text-shadow: 0 1px 4px rgba(0,0,0,.3);
 }
-@keyframes shine { to { background-position: 200% center; } }
+@keyframes shine { to { background-position: 300% center; } }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
-  border-bottom: 1px solid #eee; padding: 16px 0;
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
+  border-bottom: 2px solid #eee; padding: 16px 0;
+  box-shadow: 0 2px 16px rgba(0,0,0,.04);
 }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .nav { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 24px; font-weight: 800; color: #4f46e5; }
+.logo { font-size: 25px; font-weight: 900; color: #4f46e5; letter-spacing: -.5px; }
 .logo span { color: #f59e0b; }
 nav ul { display: flex; gap: 32px; list-style: none; }
-nav a { font-weight: 500; transition: color .2s; }
-nav a:hover { color: #4f46e5; }
+nav a { font-weight: 600; transition: all .2s; position: relative; }
+nav a:hover { color: #ef4444; }
 .btn {
-  display: inline-block; padding: 12px 28px; border-radius: 10px;
-  font-weight: 600; cursor: pointer; border: none; transition: all .25s;
+  display: inline-block; padding: 13px 30px; border-radius: 12px;
+  font-weight: 800; cursor: pointer; border: none; transition: all .25s;
+  position: relative; overflow: hidden; letter-spacing: .3px;
 }
-.btn-primary { background: #ef4444; color: #fff; }
-.btn-primary:hover { background: #dc2626; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(239,68,68,.35); }
+.btn-primary {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff; box-shadow: 0 6px 18px rgba(239,68,68,.4);
+}
+.btn-primary:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 14px 30px rgba(239,68,68,.55); }
+.btn-primary::after {
+  content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+  transition: left .6s;
+}
+.btn-primary:hover::after { left: 100%; }
 .btn-outline { background: transparent; border: 2px solid #4f46e5; color: #4f46e5; }
-.btn-outline:hover { background: #4f46e5; color: #fff; }
+.btn-outline:hover { background: #4f46e5; color: #fff; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(79,70,229,.35); }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
   padding: 90px 0 80px;
-  background: linear-gradient(135deg, #eef2ff 0%, #fef3c7 100%);
-  text-align: center; position: relative;
+  background: linear-gradient(135deg, #eef2ff 0%, #fef3c7 50%, #fee2e2 100%);
+  text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: "💸💎💰"; position: absolute; top: 10%; left: -5%;
+  font-size: 120px; opacity: .08; transform: rotate(-15deg); pointer-events: none;
+}
+.hero::after {
+  content: "🚀📈🏆"; position: absolute; bottom: 5%; right: -5%;
+  font-size: 120px; opacity: .08; transform: rotate(15deg); pointer-events: none;
 }
 .hero .discount-badge {
-  display: inline-block; background: #ef4444; color: #fff; font-weight: 800;
-  font-size: 15px; padding: 8px 20px; border-radius: 30px; margin-bottom: 24px;
-  animation: pulse 1.8s infinite;
+  display: inline-block;
+  background: linear-gradient(135deg, #ef4444, #f59e0b);
+  color: #fff; font-weight: 900; font-size: 16px;
+  padding: 10px 26px; border-radius: 40px; margin-bottom: 26px;
+  animation: pulse 1.8s infinite; position: relative; z-index: 2;
+  box-shadow: 0 8px 22px rgba(239,68,68,.4);
 }
 @keyframes pulse {
-  0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,.5); }
-  50% { transform: scale(1.05); box-shadow: 0 0 0 14px rgba(239,68,68,0); }
+  0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,.6); }
+  50% { transform: scale(1.06); box-shadow: 0 0 0 18px rgba(239,68,68,0); }
 }
-.hero h1 { font-size: 52px; line-height: 1.15; margin-bottom: 20px; }
-.hero h1 span { color: #ef4444; }
-.hero p { font-size: 20px; color: #555; max-width: 720px; margin: 0 auto 36px; }
-.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.hero-stats { display: flex; gap: 60px; justify-content: center; margin-top: 60px; flex-wrap: wrap; }
-.stat h3 { font-size: 36px; color: #4f46e5; }
-.stat p { color: #666; font-size: 15px; }
+.hero h1 { font-size: 56px; line-height: 1.12; margin-bottom: 22px; font-weight: 900; position: relative; z-index: 2; }
+.hero h1 span {
+  background: linear-gradient(135deg, #ef4444, #f59e0b);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero p { font-size: 20px; color: #555; max-width: 740px; margin: 0 auto 36px; position: relative; z-index: 2; }
+.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 2; }
 
-/* TIMER */
-.timer { display: flex; gap: 12px; justify-content: center; margin-top: 34px; flex-wrap: wrap; }
+/* ================= TIMER ================= */
+.timer { display: flex; gap: 14px; justify-content: center; margin-top: 38px; flex-wrap: wrap; position: relative; z-index: 2; }
 .timer-item {
-  background: #fff; border-radius: 12px; padding: 12px 18px; min-width: 74px;
-  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  background: #fff; border-radius: 16px; padding: 16px 20px; min-width: 84px;
+  box-shadow: 0 10px 26px rgba(239,68,68,.15);
+  border: 2px solid #fee2e2; transition: transform .3s;
 }
-.timer-item b { display: block; font-size: 28px; color: #ef4444; }
-.timer-item small { font-size: 12px; color: #777; text-transform: uppercase; }
+.timer-item:hover { transform: translateY(-4px) scale(1.04); }
+.timer-item b { display: block; font-size: 34px; color: #ef4444; font-weight: 900; line-height: 1.1; }
+.timer-item small { font-size: 12px; color: #777; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; }
 
-/* SECTIONS */
-section { padding: 80px 0; }
-.section-title { text-align: center; margin-bottom: 50px; }
-.section-title h2 { font-size: 40px; margin-bottom: 12px; }
-.section-title p { color: #666; font-size: 18px; }
+/* ================= STATS ================= */
+.hero-stats { display: flex; gap: 60px; justify-content: center; margin-top: 60px; flex-wrap: wrap; position: relative; z-index: 2; }
+.stat h3 { font-size: 40px; color: #4f46e5; font-weight: 900; }
+.stat p { color: #666; font-size: 15px; font-weight: 600; }
+
+/* ================= SECTIONS ================= */
+section { padding: 90px 0; }
+.section-title { text-align: center; margin-bottom: 56px; }
+.section-title h2 { font-size: 44px; margin-bottom: 14px; font-weight: 900; }
+.section-title p { color: #666; font-size: 19px; }
 .section-title .hint {
-  display: inline-block; margin-top: 14px; background: #fee2e2; color: #b91c1c;
-  font-weight: 700; padding: 6px 16px; border-radius: 20px; font-size: 14px;
+  display: inline-block; margin-top: 16px;
+  background: linear-gradient(135deg, #fee2e2, #fef3c7);
+  color: #b91c1c; font-weight: 800;
+  padding: 8px 20px; border-radius: 30px; font-size: 15px;
+  border: 2px solid #fecaca;
+  animation: pulse 2.4s infinite;
 }
 
-/* COURSES */
-.courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+/* ================= COURSES ================= */
+.courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
 .course-card {
-  background: #fff; border: 1px solid #e5e7eb; border-radius: 18px;
-  overflow: hidden; transition: all .3s; display: flex; flex-direction: column; position: relative;
+  background: #fff; border: 2px solid #e5e7eb; border-radius: 20px;
+  overflow: hidden; transition: all .35s; display: flex; flex-direction: column;
+  position: relative;
 }
-.course-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(239,68,68,0.15); border-color: #fecaca; }
+.course-card:hover {
+  transform: translateY(-10px) rotate(-.5deg);
+  box-shadow: 0 26px 52px rgba(239,68,68,.22);
+  border-color: #fca5a5;
+}
 .course-img {
-  height: 160px; display: flex; align-items: center; justify-content: center;
-  font-size: 56px; color: #fff; position: relative;
+  height: 170px; display: flex; align-items: center; justify-content: center;
+  font-size: 72px; color: #fff; position: relative;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.2));
 }
 .course-img .sale-flag {
-  position: absolute; top: 14px; right: 14px;
-  background: #ef4444; color: #fff; font-weight: 800; font-size: 14px;
-  padding: 6px 14px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  position: absolute; top: 16px; right: 16px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff; font-weight: 900; font-size: 15px;
+  padding: 7px 16px; border-radius: 30px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+  animation: pulse 2s infinite;
 }
-.c1 { background: linear-gradient(135deg,#6366f1,#8b5cf6); }
-.c2 { background: linear-gradient(135deg,#f59e0b,#ef4444); }
-.c3 { background: linear-gradient(135deg,#10b981,#059669); }
-.c4 { background: linear-gradient(135deg,#3b82f6,#06b6d4); }
-.c5 { background: linear-gradient(135deg,#ec4899,#8b5cf6); }
-.c6 { background: linear-gradient(135deg,#f97316,#eab308); }
-.course-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.c1 { background: linear-gradient(135deg,#6366f1,#8b5cf6,#a855f7); }
+.c2 { background: linear-gradient(135deg,#f59e0b,#ef4444,#dc2626); }
+.c3 { background: linear-gradient(135deg,#10b981,#059669,#047857); }
+.c4 { background: linear-gradient(135deg,#3b82f6,#06b6d4,#0891b2); }
+.c5 { background: linear-gradient(135deg,#ec4899,#8b5cf6,#a855f7); }
+.c6 { background: linear-gradient(135deg,#f97316,#eab308,#f59e0b); }
+.course-body { padding: 26px; flex: 1; display: flex; flex-direction: column; }
 .tag {
-  display: inline-block; font-size: 12px; font-weight: 700; text-transform: uppercase;
-  color: #4f46e5; background: #eef2ff; padding: 5px 12px; border-radius: 20px;
-  margin-bottom: 12px; align-self: flex-start;
+  display: inline-block; font-size: 12px; font-weight: 900; text-transform: uppercase;
+  color: #4f46e5; background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  padding: 6px 14px; border-radius: 20px;
+  margin-bottom: 14px; align-self: flex-start;
+  letter-spacing: .5px; border: 1px solid #c7d2fe;
 }
-.course-body h3 { font-size: 20px; margin-bottom: 10px; }
+.course-body h3 { font-size: 21px; margin-bottom: 12px; font-weight: 800; }
 .course-body p { color: #666; font-size: 15px; margin-bottom: 18px; flex: 1; }
-.course-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 14px; color: #777; }
+.course-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; font-size: 14px; color: #777; font-weight: 600; }
 
-/* PRICES */
-.prices { margin-bottom: 18px; }
+/* ================= PRICES ================= */
+.prices { margin-bottom: 20px; }
 .old-price { font-size: 17px; color: #999; text-decoration: line-through; margin-right: 10px; }
-.price { font-size: 28px; font-weight: 800; color: #ef4444; }
+.price { font-size: 30px; font-weight: 900; color: #ef4444; }
 .save {
-  display: inline-block; margin-left: 8px; font-size: 13px; font-weight: 700;
-  background: #dcfce7; color: #15803d; padding: 3px 10px; border-radius: 20px;
+  display: inline-block; margin-left: 8px; font-size: 13px; font-weight: 800;
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  color: #15803d; padding: 4px 12px; border-radius: 20px;
+  border: 1px solid #86efac;
 }
 .course-card .btn { width: 100%; text-align: center; }
 
-/* FEATURES */
-.features { background: #f9fafb; }
+/* ================= FEATURES ================= */
+.features { background: linear-gradient(135deg, #f9fafb, #f3f4f6); }
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
 .feature {
-  background: #fff; padding: 32px; border-radius: 16px; text-align: center;
-  border: 1px solid #eee;
+  background: #fff; padding: 36px 30px; border-radius: 20px; text-align: center;
+  border: 2px solid #eee; transition: all .3s;
 }
+.feature:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(79,70,229,.12); border-color: #c7d2fe; }
 .feature .icon {
-  width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 16px;
-  background: #fee2e2; display: flex; align-items: center; justify-content: center; font-size: 28px;
+  width: 76px; height: 76px; margin: 0 auto 20px; border-radius: 22px;
+  background: linear-gradient(135deg, #fee2e2, #fef3c7);
+  display: flex; align-items: center; justify-content: center; font-size: 38px;
+  box-shadow: 0 8px 20px rgba(239,68,68,.18);
+  animation: pulse 3s infinite;
 }
-.feature h3 { margin-bottom: 10px; font-size: 19px; }
+.feature h3 { margin-bottom: 12px; font-size: 20px; font-weight: 800; }
 .feature p { color: #666; font-size: 15px; }
 
-/* EDUCATION */
-.education { background: linear-gradient(135deg,#1e1b4b,#312e81); color: #fff; }
+/* ================= EDUCATION ================= */
+.education {
+  background: linear-gradient(135deg, #1e1b4b, #312e81, #4338ca);
+  color: #fff; position: relative; overflow: hidden;
+}
+.education::before {
+  content: "🎓📜🏆"; position: absolute; top: 10%; right: -5%;
+  font-size: 140px; opacity: .06; transform: rotate(15deg); pointer-events: none;
+}
 .education .section-title h2 { color: #fff; }
 .education .section-title p { color: #c7d2fe; }
-.education .section-title .hint { background: #f59e0b; color: #1a1a2e; }
-.edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-.edu-card {
-  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-  padding: 30px; border-radius: 16px; transition: all .3s; position: relative;
+.education .section-title .hint {
+  background: linear-gradient(135deg, #f59e0b, #eab308);
+  color: #1a1a2e; border-color: #fbbf24;
 }
-.edu-card:hover { background: rgba(255,255,255,0.14); transform: translateY(-4px); }
+.edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; position: relative; z-index: 2; }
+.edu-card {
+  background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.18);
+  padding: 32px; border-radius: 20px; transition: all .3s; position: relative;
+  backdrop-filter: blur(8px);
+}
+.edu-card:hover { background: rgba(255,255,255,0.17); transform: translateY(-6px) scale(1.01); border-color: rgba(251,191,36,.5); }
 .edu-card .badge {
-  display: inline-block; background: #f59e0b; color: #1a1a2e; font-weight: 700;
-  font-size: 12px; padding: 5px 12px; border-radius: 20px; margin-bottom: 14px;
+  display: inline-block;
+  background: linear-gradient(135deg, #f59e0b, #eab308);
+  color: #1a1a2e; font-weight: 900;
+  font-size: 12px; padding: 6px 14px; border-radius: 20px; margin-bottom: 16px;
+  letter-spacing: .5px; text-transform: uppercase;
 }
 .edu-card .sale-flag {
   position: absolute; top: 18px; right: 18px;
-  background: #ef4444; color: #fff; font-weight: 800; font-size: 13px;
-  padding: 6px 12px; border-radius: 30px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff; font-weight: 900; font-size: 14px;
+  padding: 7px 14px; border-radius: 30px;
+  box-shadow: 0 6px 16px rgba(239,68,68,.4);
+  animation: pulse 2s infinite;
 }
-.edu-card h3 { font-size: 21px; margin-bottom: 12px; }
-.edu-card p { color: #c7d2fe; font-size: 15px; margin-bottom: 16px; }
+.edu-card h3 { font-size: 22px; margin-bottom: 12px; font-weight: 800; }
+.edu-card p { color: #c7d2fe; font-size: 15px; margin-bottom: 18px; }
 .edu-card ul { list-style: none; font-size: 14px; color: #e0e7ff; }
-.edu-card ul li { padding: 6px 0 6px 24px; position: relative; }
-.edu-card ul li::before { content: "✓"; position: absolute; left: 0; color: #34d399; font-weight: 700; }
+.edu-card ul li { padding: 7px 0 7px 26px; position: relative; }
+.edu-card ul li::before { content: "✓"; position: absolute; left: 0; color: #34d399; font-weight: 900; font-size: 16px; }
 .edu-card .old-price { color: #a5b4fc; }
 .edu-card .price { color: #fbbf24; }
-.edu-card .save { background: rgba(52,211,153,.2); color: #34d399; }
+.edu-card .save { background: rgba(52,211,153,.25); color: #34d399; border-color: rgba(52,211,153,.5); }
 
-/* CTA */
-.cta { text-align: center; background: #fff; }
-.cta h2 { font-size: 42px; margin-bottom: 16px; }
-.cta h2 span { color: #ef4444; }
-.cta p { color: #666; font-size: 18px; margin-bottom: 30px; }
-
-/* FORM */
-.form-wrap { max-width: 560px; margin: 0 auto; text-align: left; }
-.form-wrap input {
-  width: 100%; padding: 15px 18px; margin-bottom: 14px; border: 1px solid #ddd;
-  border-radius: 10px; font-size: 16px; font-family: inherit;
+/* ================= CTA ================= */
+.cta {
+  text-align: center;
+  background: linear-gradient(135deg, #fff, #fef3c7);
+  position: relative; overflow: hidden;
 }
-.form-wrap input:focus { outline: none; border-color: #ef4444; }
-.form-wrap .btn { width: 100%; }
+.cta::before {
+  content: "✨💎🔥"; position: absolute; top: 20%; left: 5%;
+  font-size: 100px; opacity: .07; pointer-events: none;
+}
+.cta h2 { font-size: 46px; margin-bottom: 18px; font-weight: 900; position: relative; z-index: 2; }
+.cta h2 span {
+  background: linear-gradient(135deg, #ef4444, #f59e0b);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.cta p { color: #555; font-size: 19px; margin-bottom: 34px; position: relative; z-index: 2; }
+.cta p strong { color: #ef4444; font-weight: 800; }
 
-/* FOOTER */
-footer { background: #1a1a2e; color: #aaa; padding: 50px 0 24px; }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 30px; margin-bottom: 40px; }
-footer h4 { color: #fff; margin-bottom: 16px; font-size: 16px; }
+/* ================= FORM ================= */
+.form-wrap { max-width: 560px; margin: 0 auto; text-align: left; position: relative; z-index: 2; }
+.form-wrap input {
+  width: 100%; padding: 16px 20px; margin-bottom: 14px;
+  border: 2px solid #e5e7eb; border-radius: 12px;
+  font-size: 16px; font-family: inherit;
+  transition: all .2s; background: #fff;
+}
+.form-wrap input:focus { outline: none; border-color: #ef4444; box-shadow: 0 0 0 4px rgba(239,68,68,.12); }
+.form-wrap .btn { width: 100%; font-size: 17px; padding: 16px; }
+
+/* ================= FOOTER ================= */
+footer { background: linear-gradient(135deg, #1a1a2e, #16213e); color: #aaa; padding: 56px 0 26px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 32px; margin-bottom: 42px; }
+footer h4 { color: #fff; margin-bottom: 16px; font-size: 17px; font-weight: 800; }
 footer ul { list-style: none; }
-footer ul li { margin-bottom: 10px; font-size: 14px; }
-footer a:hover { color: #fff; }
-.footer-bottom { border-top: 1px solid #333; padding-top: 24px; text-align: center; font-size: 13px; }
+footer ul li { margin-bottom: 12px; font-size: 14px; }
+footer a { transition: color .2s; }
+footer a:hover { color: #fbbf24; }
+footer .contact-item { display: flex; align-items: center; gap: 8px; }
+.footer-bottom { border-top: 1px solid #333; padding-top: 26px; text-align: center; font-size: 13px; }
 
 @media (max-width: 768px) {
   nav ul { display: none; }
-  .hero h1 { font-size: 36px; }
-  .section-title h2 { font-size: 30px; }
+  .hero h1 { font-size: 38px; }
+  .section-title h2 { font-size: 32px; }
+  .cta h2 { font-size: 32px; }
   .hero-stats { gap: 30px; }
+  .timer-item { min-width: 70px; padding: 12px 14px; }
+  .timer-item b { font-size: 26px; }
 }
 </style>
 </head>
 <body>
 
 <!-- PROMO BAR -->
-<div class="promo-bar">🔥 ЧЁРНАЯ ПЯТНИЦА: СКИДОС 70% НА ВСЁ! ХВАТАЙ, ПОКА ГОРЯЧО 🔥</div>
+<div class="promo-bar">🔥💸 ЧЁРНАЯ ПЯТНИЦА: СКИДОС 70% НА ВСЁ! ХВАТАЙ, ПОКА ГОРЯЧО 💸🔥</div>
 
 <!-- HEADER -->
 <header>
@@ -354,19 +441,19 @@ footer a:hover { color: #fff; }
         <li><a href="#cta">Контакты</a></li>
       </ul>
     </nav>
-    <a href="#cta" class="btn btn-primary">Забрать −70%</a>
+    <a href="#cta" class="btn btn-primary">Забрать −70% 🔥</a>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="discount-badge">СКИДОС 70% НА ВСЁ — ТОЛЬКО СЕГОДНЯ</div>
-    <h1>Научись <span>зарабатывать</span><br>с нуля до результата</h1>
-    <p>Практические курсы по поиску ниши, бизнес-модели и запуску своего дела. Плюс программы с официальным образованием. Скидка 70% — залетай, пока не разобрали!</p>
+    <div class="discount-badge">⚡ СКИДОС 70% НА ВСЁ — ТОЛЬКО СЕГОДНЯ ⚡</div>
+    <h1>Научись <span>зарабатывать</span><br>с нуля до результата 🚀</h1>
+    <p>Практические курсы по поиску ниши, бизнес-модели и запуску своего дела. Плюс программы с официальным образованием. Скидка 70% — залетай, пока не разобрали! 💸</p>
     <div class="hero-buttons">
-      <a href="#courses" class="btn btn-primary">Смотреть курсы −70%</a>
-      <a href="#education" class="btn btn-outline">Программы образования</a>
+      <a href="#courses" class="btn btn-primary">Смотреть курсы −70% 🔥</a>
+      <a href="#education" class="btn btn-outline">Программы образования 🎓</a>
     </div>
 
     <div class="timer" id="timer">
@@ -377,9 +464,9 @@ footer a:hover { color: #fff; }
     </div>
 
     <div class="hero-stats">
-      <div class="stat"><h3>12 000+</h3><p>выпускников</p></div>
-      <div class="stat"><h3>45</h3><p>курсов и программ</p></div>
-      <div class="stat"><h3>4.9</h3><p>средний рейтинг</p></div>
+      <div class="stat"><h3>🏆 12 000+</h3><p>выпускников</p></div>
+      <div class="stat"><h3>📚 45</h3><p>курсов и программ</p></div>
+      <div class="stat"><h3>⭐ 4.9</h3><p>средний рейтинг</p></div>
     </div>
   </div>
 </section>
@@ -388,9 +475,9 @@ footer a:hover { color: #fff; }
 <section id="courses">
   <div class="container">
     <div class="section-title">
-      <h2>Курсы для заработка</h2>
-      <p>От поиска ниши до первых продаж — пошагово, без воды, с реальным движем</p>
-      <span class="hint">🔥 Скидка 70% на все курсы по промокоду PROFIT70</span>
+      <h2>Курсы для заработка 💰</h2>
+      <p>От поиска ниши до первых продаж — пошагово, без воды, с реальным движем 🚀</p>
+      <span class="hint">🔥 Скидка 70% на все курсы по промокоду PROFIT70 🔥</span>
     </div>
     <div class="courses-grid">
 
@@ -399,14 +486,14 @@ footer a:hover { color: #fff; }
         <div class="course-body">
           <span class="tag">Старт</span>
           <h3>Поиск ниши и анализ рынка</h3>
-          <p>Найди прибыльную нишу, оцени спрос и конкурентов, проверь идею до вложений. Без духоты и воды.</p>
+          <p>Найди прибыльную нишу, оцени спрос и конкурентов, проверь идею до вложений. Без духоты и воды 💎</p>
           <div class="course-meta"><span>⏱ 6 недель</span><span>⭐ 4.9</span></div>
           <div class="prices">
             <span class="old-price">14 900 ₽</span>
             <span class="price">4 470 ₽</span>
             <span class="save">выгода 10 430 ₽</span>
           </div>
-          <a href="#cta" class="btn btn-primary">Залететь со скидкой</a>
+          <a href="#cta" class="btn btn-primary">Залететь со скидкой 🔥</a>
         </div>
       </div>
 
@@ -415,14 +502,14 @@ footer a:hover { color: #fff; }
         <div class="course-body">
           <span class="tag">Бизнес</span>
           <h3>Создание бизнес-модели</h3>
-          <p>Собери жизнеспособную бизнес-модель, просчитай экономику и подготовь план запуска на изи.</p>
+          <p>Собери жизнеспособную бизнес-модель, просчитай экономику и подготовь план запуска на изи 💸</p>
           <div class="course-meta"><span>⏱ 8 недель</span><span>⭐ 4.8</span></div>
           <div class="prices">
             <span class="old-price">19 900 ₽</span>
             <span class="price">5 970 ₽</span>
             <span class="save">выгода 13 930 ₽</span>
           </div>
-          <a href="#cta" class="btn btn-primary">Залететь со скидкой</a>
+          <a href="#cta" class="btn btn-primary">Залететь со скидкой 🔥</a>
         </div>
       </div>
 
@@ -431,14 +518,14 @@ footer a:hover { color: #fff; }
         <div class="course-body">
           <span class="tag">Практика</span>
           <h3>Запуск бизнеса с нуля</h3>
-          <p>Пошаговый запуск: от идеи до первых клиентов. Маркетинг, продажи и первые деньги в кармане.</p>
+          <p>Пошаговый запуск: от идеи до первых клиентов. Маркетинг, продажи и первые деньги в кармане 💰</p>
           <div class="course-meta"><span>⏱ 10 недель</span><span>⭐ 5.0</span></div>
           <div class="prices">
             <span class="old-price">24 900 ₽</span>
             <span class="price">7 470 ₽</span>
             <span class="save">выгода 17 430 ₽</span>
           </div>
-          <a href="#cta" class="btn btn-primary">Залететь со скидкой</a>
+          <a href="#cta" class="btn btn-primary">Залететь со скидкой 🔥</a>
         </div>
       </div>
 
@@ -447,14 +534,14 @@ footer a:hover { color: #fff; }
         <div class="course-body">
           <span class="tag">Онлайн</span>
           <h3>Заработок в интернете</h3>
-          <p>Фриланс, контент, digital-профессии и источники пассивного дохода в сети. Топовые схемы.</p>
+          <p>Фриланс, контент, digital-профессии и источники пассивного дохода в сети. Топовые схемы 📈</p>
           <div class="course-meta"><span>⏱ 5 недель</span><span>⭐ 4.7</span></div>
           <div class="prices">
             <span class="old-price">12 900 ₽</span>
             <span class="price">3 870 ₽</span>
             <span class="save">выгода 9 030 ₽</span>
           </div>
-          <a href="#cta" class="btn btn-primary">Залететь со скидкой</a>
+          <a href="#cta" class="btn btn-primary">Залететь со скидкой 🔥</a>
         </div>
       </div>
 
@@ -463,14 +550,14 @@ footer a:hover { color: #fff; }
         <div class="course-body">
           <span class="tag">Финансы</span>
           <h3>Финансовая грамотность</h3>
-          <p>Управляй деньгами, разберись с инвестициями для начинающих и построй капитал без стресса.</p>
+          <p>Управляй деньгами, разберись с инвестициями для начинающих и построй капитал без стресса 💎</p>
           <div class="course-meta"><span>⏱ 6 недель</span><span>⭐ 4.9</span></div>
           <div class="prices">
             <span class="old-price">16 900 ₽</span>
             <span class="price">5 070 ₽</span>
             <span class="save">выгода 11 830 ₽</span>
           </div>
-          <a href="#cta" class="btn btn-primary">Залететь со скидкой</a>
+          <a href="#cta" class="btn btn-primary">Залететь со скидкой 🔥</a>
         </div>
       </div>
 
@@ -479,14 +566,14 @@ footer a:hover { color: #fff; }
         <div class="course-body">
           <span class="tag">Маркетинг</span>
           <h3>Продажи и привлечение клиентов</h3>
-          <p>Выстраивай воронки, находи первых клиентов и масштабируй продажи как профи.</p>
+          <p>Выстраивай воронки, находи первых клиентов и масштабируй продажи как профи 🏆</p>
           <div class="course-meta"><span>⏱ 7 недель</span><span>⭐ 4.8</span></div>
           <div class="prices">
             <span class="old-price">18 900 ₽</span>
             <span class="price">5 670 ₽</span>
             <span class="save">выгода 13 230 ₽</span>
           </div>
-          <a href="#cta" class="btn btn-primary">Залететь со скидкой</a>
+          <a href="#cta" class="btn btn-primary">Залететь со скидкой 🔥</a>
         </div>
       </div>
 
@@ -498,29 +585,29 @@ footer a:hover { color: #fff; }
 <section id="features" class="features">
   <div class="container">
     <div class="section-title">
-      <h2>Почему выбирают нас</h2>
-      <p>Практика, поддержка и результат с первого месяца</p>
+      <h2>Почему выбирают нас 🏆</h2>
+      <p>Практика, поддержка и результат с первого месяца 💪</p>
     </div>
     <div class="features-grid">
       <div class="feature">
         <div class="icon">🧠</div>
         <h3>Практика, а не духота</h3>
-        <p>Каждый модуль — реальные задания, а не просто лекции в стиле «слушай и кивай».</p>
+        <p>Каждый модуль — реальные задания, а не просто лекции в стиле «слушай и кивай» 😎</p>
       </div>
       <div class="feature">
         <div class="icon">👨‍🏫</div>
         <h3>Эксперты в теме</h3>
-        <p>Преподают действующие предприниматели и спецы, которые реально шарят.</p>
+        <p>Преподают действующие предприниматели и спецы, которые реально шарят 🔥</p>
       </div>
       <div class="feature">
         <div class="icon">🤝</div>
         <h3>Наставничество и чат</h3>
-        <p>Обратная связь от кураторов и движ в общем чате единомышленников.</p>
+        <p>Обратная связь от кураторов и движ в общем чате единомышленников 👊</p>
       </div>
       <div class="feature">
         <div class="icon">📜</div>
         <h3>Документы об обучении</h3>
-        <p>Сертификаты и возможность получить официальное образование — всё по-взрослому.</p>
+        <p>Сертификаты и возможность получить официальное образование — всё по-взрослому 🎓</p>
       </div>
     </div>
   </div>
@@ -530,9 +617,9 @@ footer a:hover { color: #fff; }
 <section id="education" class="education">
   <div class="container">
     <div class="section-title">
-      <h2>Программы с получением образования</h2>
-      <p>Официальные документы и глубокая профессиональная подготовка</p>
-      <span class="hint">🔥 Скидка 70% на все программы образования</span>
+      <h2>Программы с получением образования 🎓</h2>
+      <p>Официальные документы и глубокая профессиональная подготовка 📜</p>
+      <span class="hint">🔥 Скидка 70% на все программы образования 🔥</span>
     </div>
     <div class="edu-grid">
 
@@ -540,7 +627,7 @@ footer a:hover { color: #fff; }
         <span class="badge">Диплом</span>
         <span class="sale-flag">−70%</span>
         <h3>Предпринимательство и бизнес</h3>
-        <p>Программа профессиональной переподготовки с выдачей диплома установленного образца.</p>
+        <p>Программа профессиональной переподготовки с выдачей диплома установленного образца 🎓</p>
         <ul>
           <li>Длительность: 9 месяцев</li>
           <li>Формат: онлайн + практика</li>
@@ -557,7 +644,7 @@ footer a:hover { color: #fff; }
         <span class="badge">Сертификат</span>
         <span class="sale-flag">−70%</span>
         <h3>Основы малого бизнеса</h3>
-        <p>Короткая программа для тех, кто хочет системно войти в предпринимательство.</p>
+        <p>Короткая программа для тех, кто хочет системно войти в предпринимательство 💼</p>
         <ul>
           <li>Длительность: 4 месяца</li>
           <li>Формат: онлайн</li>
@@ -574,7 +661,7 @@ footer a:hover { color: #fff; }
         <span class="badge">Переподготовка</span>
         <span class="sale-flag">−70%</span>
         <h3>Финансы и управление</h3>
-        <p>Профессиональная переподготовка для карьеры в финансовой сфере и управлении.</p>
+        <p>Профессиональная переподготовка для карьеры в финансовой сфере и управлении 📊</p>
         <ul>
           <li>Длительность: 12 месяцев</li>
           <li>Формат: онлайн + вебинары</li>
@@ -594,15 +681,15 @@ footer a:hover { color: #fff; }
 <!-- CTA / FORM -->
 <section id="cta" class="cta">
   <div class="container">
-    <h2>Готов начать зарабатывать <span>со скидкой 70%</span>?</h2>
-    <p>Оставь заявку — подберём программу под твою цель. Промокод PROFIT70 влетит автоматически. Или свяжись напрямую: <strong>+7 995 928-06-20</strong>, <strong>sitebkbgithub63633@mail.ru</strong>.</p>
+    <h2>Готов начать зарабатывать <span>со скидкой 70%</span>? 💸</h2>
+    <p>Оставь заявку — подберём программу под твою цель. Промокод PROFIT70 влетит автоматически. Или свяжись напрямую: <strong>+7 995 928-06-20</strong>, <strong>sitebkbgithub63633@gmail.com</strong></p>
     <div class="form-wrap">
-      <form onsubmit="event.preventDefault(); alert('Красавчик! Скидка 70% закреплена за тобой. Мы свяжемся с тобой в ближайшее время.');">
-        <input type="text" placeholder="Твоё имя" required>
-        <input type="email" placeholder="Email" required>
-        <input type="tel" placeholder="Телефон">
-        <input type="text" placeholder="Какая тема интересует?">
-        <button type="submit" class="btn btn-primary">Получить скидку 70%</button>
+      <form onsubmit="event.preventDefault(); alert('Красавчик! 🔥 Скидка 70% закреплена за тобой. Мы свяжемся с тобой в ближайшее время.');">
+        <input type="text" placeholder="Твоё имя 😎" required>
+        <input type="email" placeholder="Email 📧" required>
+        <input type="tel" placeholder="Телефон 📞">
+        <input type="text" placeholder="Какая тема интересует? 💡">
+        <button type="submit" class="btn btn-primary">Получить скидку 70% 🔥</button>
       </form>
     </div>
   </div>
@@ -614,58 +701,76 @@ footer a:hover { color: #fff; }
     <div class="footer-grid">
       <div>
         <div class="logo" style="color:#fff;">Profit<span style="color:#f59e0b;">Academy</span></div>
-        <p style="margin-top:14px; font-size:14px;">Помогаем запускать бизнес и получать профессии с нуля.</p>
+        <p style="margin-top:14px; font-size:14px;">Помогаем запускать бизнес и получать профессии с нуля 🚀</p>
       </div>
       <div>
         <h4>Курсы</h4>
         <ul>
-          <li><a href="#courses">Поиск ниши</a></li>
-          <li><a href="#courses">Бизнес-модель</a></li>
-          <li><a href="#courses">Заработок онлайн</a></li>
-          <li><a href="#courses">Финансы</a></li>
+          <li><a href="#courses">🔍 Поиск ниши</a></li>
+          <li><a href="#courses">📊 Бизнес-модель</a></li>
+          <li><a href="#courses">💻 Заработок онлайн</a></li>
+          <li><a href="#courses">📈 Финансы</a></li>
         </ul>
       </div>
       <div>
         <h4>Образование</h4>
         <ul>
-          <li><a href="#education">Дипломные программы</a></li>
-          <li><a href="#education">Переподготовка</a></li>
-          <li><a href="#education">Сертификаты</a></li>
+          <li><a href="#education">🎓 Дипломные программы</a></li>
+          <li><a href="#education">📜 Переподготовка</a></li>
+          <li><a href="#education">🏅 Сертификаты</a></li>
         </ul>
       </div>
       <div>
         <h4>Контакты</h4>
         <ul>
-          <li>📧 <a href="mailto:sitebkbgithub63633@mail.ru">sitebkbgithub63633@mail.ru</a></li>
-          <li>📞 <a href="tel:+79959280620">+7 995 928-06-20</a></li>
-          <li>📍 Самара, Волжский проспект, 8</li>
+          <li class="contact-item">📧 <a href="mailto:sitebkbgithub63633@gmail.com">sitebkbgithub63633@gmail.com</a></li>
+          <li class="contact-item">📞 <a href="tel:+79959280620">+7 995 928-06-20</a></li>
+          <li class="contact-item">📍 Самара, Волжский проспект, 8</li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">© 2024 ProfitAcademy. Все права защищены. Акция «−70%» действует ограниченное время.</div>
+    <div class="footer-bottom">© 2024 ProfitAcademy. Все права защищены. Акция «−70%» действует ограниченное время 🔥</div>
   </div>
 </footer>
 
 <script>
-// Таймер обратного отсчёта (до конца текущих суток)
+// ============================================================
+// ТАЙМЕР: 39 дней от фиксированной даты старта акции.
+// Дата зашита, чтобы при перезагрузке отсчёт НЕ сбрасывался.
+// Чтобы изменить — поменяй START_DATE (формат: ГГГГ-ММ-ДДTЧЧ:ММ:СС)
+// ============================================================
+const START_DATE = new Date("2026-11-06T00:00:00"); // старт акции
+const DURATION_DAYS = 39;                            // длительность 39 дней
+const END_DATE = new Date(START_DATE.getTime() + DURATION_DAYS * 24 * 60 * 60 * 1000);
+
 function updateTimer() {
   const now = new Date();
-  const end = new Date(now);
-  end.setHours(23, 59, 59, 999);
-  let diff = Math.max(0, end - now);
+  let diff = END_DATE - now;
+
+  // Если время вышло — показываем нули
+  if (diff <= 0) {
+    document.getElementById('t-days').textContent = '00';
+    document.getElementById('t-hours').textContent = '00';
+    document.getElementById('t-mins').textContent = '00';
+    document.getElementById('t-secs').textContent = '00';
+    return;
+  }
+
   const d = Math.floor(diff / 86400000);
-  const h = Math.floor(diff % 86400000 / 3600000);
-  const m = Math.floor(diff % 3600000 / 60000);
-  const s = Math.floor(diff % 60000 / 1000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
   const pad = n => String(n).padStart(2, '0');
+
   document.getElementById('t-days').textContent = pad(d);
   document.getElementById('t-hours').textContent = pad(h);
   document.getElementById('t-mins').textContent = pad(m);
   document.getElementById('t-secs').textContent = pad(s);
 }
+
 updateTimer();
 setInterval(updateTimer, 1000);
 </script>
 
 </body>
-</html>
+          </html>
